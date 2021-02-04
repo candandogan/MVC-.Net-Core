@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Product>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+    <h1>ANASAYFA</h1>
+    <p>paragraf</p>
+    <p>
+       Selam @ViewBag.Name, şuan saat @ViewBag.Hour
+    </p>
+    @if (ViewBag.Hour < 12)
+    {
+        <p>Günaydın</p>
+    }
+    else if(ViewBag.Hour < 17)
+    {
+        <p>Mutlu Günler</p>
+    }
+    else
+    {
+        <p>İyi Akşamlar</p>
+    }
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name ürününün fiyatı @item.Price TL</li>
+        }
+    </ul>
+    Koronaya veda partisi yapıyoruz. Katılmak için <a asp-action="Davet" asp-controller="Home" 
+                                                      class="btn btn-success">tıkla</a>
+

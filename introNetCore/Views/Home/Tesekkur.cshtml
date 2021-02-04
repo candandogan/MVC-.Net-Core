@@ -1,0 +1,14 @@
+﻿@model UserResponse
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+    @if (Model.IsAccepted)
+    {
+        <p>Patide görüşürüz!</p>
+    }
+    else
+    {
+        <p>Buna üzüldük. Kimlerin geldiğini görmek ister misin? <a asp-action="Gelenler" asp-controller="Home">Tıkla.</a></p>
+    }
+
